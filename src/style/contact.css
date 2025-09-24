@@ -1,0 +1,222 @@
+/* Main container */
+.contact-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  width: 90%;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3a86ff, #8a2be2, #ff2e63);
+  border-radius: 20px 20px 0 0;
+}
+
+.contact-container h1 {
+  text-align: center;
+  color: #f5f5f5;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.contact-container h1::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #3a86ff, #8a2be2);
+  margin: 1rem auto;
+  border-radius: 2px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: rgba(30, 30, 50, 0.7);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+input,
+textarea {
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  transition: all 0.3s ease;
+  background-color: rgba(20, 20, 40, 0.8);
+  color: #f5f5f5;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #3a86ff;
+  box-shadow: 0 0 15px rgba(58, 134, 255, 0.4),
+              inset 0 1px 3px rgba(0, 0, 0, 0.3);
+  outline: none;
+  background-color: rgba(25, 25, 45, 0.9);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+button {
+  background: linear-gradient(135deg, #3a86ff 0%, #8a2be2 100%);
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(58, 134, 255, 0.3);
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 20px rgba(58, 134, 255, 0.4),
+              0 0 15px rgba(138, 43, 226, 0.3);
+  background: linear-gradient(135deg, #4a96ff 0%, #9a3bf2 100%);
+}
+
+button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 10px rgba(58, 134, 255, 0.3);
+}
+
+/* Social icons */
+/* Social icons */
+.SI {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.SI a {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.SI a:hover {
+  background: rgba(58, 134, 255, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.SI img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1); /* White by default */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.SI a:hover img {
+  filter: none; /* Remove filter to show original color */
+  transform: scale(1.1);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 2rem;
+  }
+
+  .contact-container h1 {
+    font-size: 2.2rem;
+  }
+
+  form {
+    padding: 1.5rem;
+    gap: 1.2rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-container {
+    padding: 1.5rem;
+    margin: 1rem;
+    border-radius: 15px;
+  }
+
+  .contact-container h1 {
+    font-size: 1.8rem;
+  }
+
+  input,
+  textarea {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+
+  button {
+    font-size: 0.95rem;
+    padding: 0.8rem;
+  }
+
+  .SI a {
+    width: 45px;
+    height: 45px;
+  }
+
+  .SI img {
+    width: 22px;
+    height: 22px;
+  }
+}

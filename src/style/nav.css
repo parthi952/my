@@ -1,0 +1,304 @@
+/* Premium Dark Theme Navbar - Fully Responsive */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #0a0e27 0%, #1a1a2e 50%, #16213e 100%);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Navbar links */
+.navbar a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0 20px;
+    padding: 10px 15px;
+    border-radius: 30px;
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Hover effect */
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #3a86ff, #8a2be2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 30px;
+    z-index: -1;
+}
+
+.navbar a:hover::before {
+    opacity: 0.2;
+}
+
+.navbar a:hover {
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(58, 134, 255, 0.3);
+}
+
+/* Underline animation */
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #3a86ff, #8a2be2);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    border-radius: 1px;
+}
+
+.navbar a:hover::after {
+    width: 80%;
+    box-shadow: 0 0 10px rgba(58, 134, 255, 0.5);
+}
+
+/* Active link effect */
+.navbar a.active {
+    color: #ffffff;
+    background: rgba(58, 134, 255, 0.2);
+    box-shadow: 0 5px 15px rgba(58, 134, 255, 0.3);
+}
+
+.navbar a.active::after {
+    width: 60%;
+    box-shadow: 0 0 15px rgba(58, 134, 255, 0.7);
+}
+
+/* Mobile menu button */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 5%;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: linear-gradient(90deg, #3a86ff, #8a2be2);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Decorative elements */
+.navbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(138, 43, 226, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(58, 134, 255, 0.1) 0%, transparent 20%);
+    z-index: -1;
+}
+
+/* Navbar scroll effect */
+.navbar.scrolled {
+    padding: 10px 5%;
+    background: rgba(10, 14, 39, 0.95);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive adjustments */
+
+/* Tablets and smaller devices */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 15px 4%;
+    }
+    
+    .navbar a {
+        margin: 0 15px;
+        font-size: 1rem;
+        padding: 8px 12px;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 3%;
+        justify-content: flex-end;
+    }
+    
+    .navbar a {
+        display: none;
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+        border-radius: 10px;
+        background: rgba(30, 30, 50, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 1.1rem;
+    }
+    
+    .navbar.active a {
+        display: block;
+        animation: fadeIn 0.5s ease forwards;
+    }
+    
+    .menu-toggle {
+        display: flex;
+    }
+    
+    /* Hamburger animation */
+    .navbar.active .menu-toggle span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .navbar.active .menu-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .navbar.active .menu-toggle span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    /* Mobile menu background */
+    .navbar.active {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 80px;
+        height: 100vh;
+        background: linear-gradient(135deg, #0a0e27 0%, #1a1a2e 50%, #16213e 100%);
+    }
+    
+    /* Remove hover effects on mobile for better UX */
+    .navbar a:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    
+    .navbar a::before {
+        display: none;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 12px 2%;
+    }
+    
+    .navbar a {
+        font-size: 1rem;
+        padding: 12px;
+    }
+    
+    .menu-toggle {
+        top: 15px;
+        right: 3%;
+        width: 25px;
+        height: 18px;
+    }
+    
+    .menu-toggle span {
+        height: 2.5px;
+    }
+    
+    .navbar.active {
+        padding-top: 70px;
+    }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 360px) {
+    .navbar a {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+    
+    .menu-toggle {
+        width: 22px;
+        height: 16px;
+    }
+    
+    .menu-toggle span {
+        height: 2px;
+    }
+}
+
+/* Animation for mobile menu items */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Landscape orientation for mobile devices */
+@media (max-height: 500px) and (orientation: landscape) {
+    .navbar.active {
+        padding-top: 60px;
+        height: auto;
+        max-height: 100vh;
+        overflow-y: auto;
+    }
+    
+    .navbar a {
+        padding: 10px;
+        margin: 5px 0;
+    }
+}
+
+/* Large desktops and 4K screens */
+@media (min-width: 1600px) {
+    .navbar {
+        padding: 20px 10%;
+    }
+    
+    .navbar a {
+        font-size: 1.3rem;
+        margin: 0 30px;
+        padding: 12px 20px;
+    }
+}
+
+/* High resolution devices */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .navbar {
+        border-bottom: 0.5px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .navbar a::after {
+        height: 1.5px;
+    }
+}
