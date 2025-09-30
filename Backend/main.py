@@ -21,6 +21,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 # Pydantic model for form data
 class ContactForm(BaseModel):
     name: str

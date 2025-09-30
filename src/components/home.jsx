@@ -1,4 +1,4 @@
-import "/home/parthiban/Desktop/myportfo/portfo/src/style/home.css"
+// import "/home/parthiban/Desktop/myportfo/portfo/src/style/home.css"
 import im from "/home/parthiban/Desktop/myportfo/portfo/src/assets/IMG_20250801_133155.jpg";
 
 

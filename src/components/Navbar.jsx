@@ -1,5 +1,5 @@
 
-import "/home/parthiban/Desktop/myportfo/portfo/src/style/nav.css"
+// import "/home/parthiban/Desktop/myportfo/portfo/src/style/nav.css"
 import { useState, useEffect } from "react";
 
 function Navbar() {

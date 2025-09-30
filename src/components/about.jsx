@@ -1,5 +1,5 @@
 
-import "/home/parthiban/Desktop/myportfo/portfo/src/style/about.css";
+// import "/home/parthiban/Desktop/myportfo/portfo/src/style/about.css";
 import react from "/home/parthiban/Desktop/myportfo/portfo/src/assets/scroll/icons8-react-80.png";
 import js from "/home/parthiban/Desktop/myportfo/portfo/src/assets/scroll/icons8-js-48.png";
 import python from "/home/parthiban/Desktop/myportfo/portfo/src/assets/scroll/icons8-python-48.png";

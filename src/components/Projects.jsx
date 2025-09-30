@@ -1,4 +1,4 @@
-import "/home/parthiban/Desktop/myportfo/portfo/src/style/project.css"
+// import "/home/parthiban/Desktop/myportfo/portfo/src/style/project.css"
 
 
 function Projects() {

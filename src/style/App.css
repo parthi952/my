@@ -177,7 +177,7 @@ input:focus, textarea:focus, select:focus {
 .social-icons {
     display: flex;
     gap: 20px;
-    justify-content: left;
+    justify-content: center;
     margin-top: 30px;
 }
 
@@ -352,7 +352,6 @@ input:focus, textarea:focus, select:focus {
     font-weight: 700;
     letter-spacing: -1px;
     text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    text-align: left;
 }
 
 .home-content p {
@@ -1349,12 +1348,10 @@ button:active {
     
     .home-content h1 {
         font-size: 3rem;
-        text-align: center;
     }
     
     .home-content p {
         font-size: 1.6rem;
-        text-align: center;
     }
     
     .about-header h1 {
@@ -1440,24 +1437,19 @@ button:active {
         display: none;
     }
     
-    /* Home page */
     .home {
         flex-direction: column-reverse;
-      
+        text-align: center;
         padding: 20px;
         gap: 40px;
     }
-
+    
     .home-content h1 {
         font-size: 2.5rem;
-        align-items: flex-end;
-        text-align: center;
-        
     }
     
     .home-content p {
         font-size: 1.4rem;
-        text-align: center;
     }
     
     .home-content p::after {
@@ -1627,12 +1619,10 @@ button:active {
     
     .home-content h1 {
         font-size: 2rem;
-        text-align: center;
     }
     
     .home-content p {
         font-size: 1.2rem;
-        text-align: center;
     }
     
     .image img {
@@ -1806,12 +1796,10 @@ button:active {
     
     .home-content h1 {
         font-size: 1.8rem;
-            text-align: left;
     }
     
     .home-content p {
         font-size: 1.1rem;
-        text-align: left;
     }
     
     .image img {
@@ -1880,14 +1868,12 @@ button:active {
     
     .home-content h1 {
         font-size: 1.8rem;
-        text-align: left;
     }
     
     .home-content p {
         font-size: 1.2rem;
-        text-align: left;
     }
-
+    
     .image img {
         max-width: 200px;
     }
@@ -1995,12 +1981,10 @@ button:active {
     
     .home-content h1 {
         font-size: 4.5rem;
-        text-align: left;
     }
     
     .home-content p {
         font-size: 2.2rem;
-        text-align: left;
     }
     
     .image img {
@@ -2100,85 +2084,4 @@ button:active {
     .footer__link::before {
         height: 1.5px;
     }
-}
-
-footer {
-    text-align: center;
-    padding: 30px;
-    background: linear-gradient(135deg, #0a0e27, #16213e);
-    color: #a0aec0;
-    font-size: 0.9rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-footer a {
-    color: #3a86ff;
-    margin: 0 10px;
-    transition: 0.3s;
-}
-
-footer a:hover {
-    color: #8a2be2;
-    text-shadow: 0 0 8px rgba(138, 43, 226, 0.4);
-}
-
-
-@keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-section {
-    animation: fadeUp 1s ease forwards;
-    opacity: 0;
-}
-
-section.visible {
-    opacity: 1;
-}
-
-
-.navbar {
-    flex-wrap: wrap;
-}
-
-.nav-links {
-    display: flex;
-    gap: 20px;
-}
-
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: rgba(15, 20, 40, 0.95);
-        padding: 20px 0;
-        border-radius: 0 0 20px 20px;
-    }
-
-    .nav-links.active {
-        display: flex;
-        animation: dropdown 0.4s ease;
-    }
-
-    @keyframes dropdown {
-        from { opacity: 0; transform: translateY(-20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    .menu-toggle { display: flex; }
-}
-
-@media (max-width: 768px) {
-    h1 { font-size: 2.2rem; }
-    h2 { font-size: 1.8rem; }
-    .home-content p { font-size: 1.4rem; }
-    section { padding: 60px 15px; }
-}
-
-@media (max-width: 480px) {
-    h1 { font-size: 1.8rem; }
-    .navbar a { margin: 0 10px; font-size: 0.9rem; }
-    .btn { padding: 10px 20px; font-size: 0.9rem; }
 }

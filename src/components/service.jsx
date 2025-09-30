@@ -1,4 +1,4 @@
-import "/home/parthiban/Desktop/myportfo/portfo/src/style/Service.css"
+// import "/home/parthiban/Desktop/myportfo/portfo/src/style/Service.css"
 
 function Service() {
     const content = [

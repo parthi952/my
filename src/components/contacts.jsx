@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "/home/parthiban/Desktop/myportfo/portfo/src/style/contact.css";
+// import "/home/parthiban/Desktop/myportfo/portfo/src/style/contact.css";
 import axios from "axios";
 
 function Contact() {
@@ -14,7 +14,7 @@ function Contact() {
   const [submitStatus, setSubmitStatus] = useState('');
 
   // Base URL for your FastAPI backend
-  const API_BASE_URL = 'http://localhost:8000';
+  const API_BASE_URL = "https://port-backend-delta.vercel.app";
 
   useEffect(() => {
     const fetchContactData = async () => {
@@ -122,6 +122,7 @@ function Contact() {
         <button type="submit" disabled={loading}>
           {loading ? 'Sending...' : 'Send Message'}
         </button>
+        <p>{submitStatus === 'success' ? 'Message sent successfully!' : submitStatus === 'error' ? 'Error sending message.' : ''}</p>
       </form>
       
       <div className="SI">
