@@ -5,7 +5,7 @@ import react from "../assets/scroll/icons8-react-80.png";
 import js from "../assets/scroll/icons8-js-48.png";
 import python from "../assets/scroll/icons8-python-48.png";
 import html from "../assets/scroll/icons8-html-48.png";
-import css from "../src/assets/scroll/icons8-css-100.png";
+import css from "../assets/scroll/icons8-css-100.png";
 import figma from "../assets/scroll/icons8-figma-48.png";
 import photoshop from "../assets/scroll/icons8-photoshop-48.png";
 
