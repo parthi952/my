@@ -1,5 +1,4 @@
 
-// import "/home/parthiban/Desktop/myportfo/portfo/src/style/about.css";
 
 import react from "../assets/scroll/icons8-react-80.png";
 import js from "../assets/scroll/icons8-js-48.png";
