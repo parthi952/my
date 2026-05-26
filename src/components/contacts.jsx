@@ -1,145 +1,101 @@
-import React, { useEffect, useState } from "react";
-// import "/home/parthiban/Desktop/myportfo/portfo/src/style/contact.css";
-import axios from "axios";
+import { FaLinkedinIn, FaGithub, FaTwitter, FaFacebookF, FaEnvelope, FaPhoneAlt, FaComments, FaMapMarkerAlt, FaCheckDouble } from "react-icons/fa";
 
 function Contact() {
-  const [contactInfo, setContactInfo] = useState({});
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    number: '',
-    message: ''
-  });
-  const [loading, setLoading] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState('');
-
-  // Base URL for your FastAPI backend
-  const API_BASE_URL = "https://port-backend-delta.vercel.app";
-
-  useEffect(() => {
-    const fetchContactData = async () => {
-      try {
-        const result = await axios.get(`${API_BASE_URL}/contact`);
-        setContactInfo(result.data);
-      } catch (error) {
-        console.error("Error fetching contact data:", error);
-        // Set fallback data if API fails
-        setContactInfo({
-          email: "your@email.com",
-          phone: "+1234567890",
-          message: "Contact me for opportunities"
-        });
-      }
-    };
-    fetchContactData();
-  }, []);
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+  const contactDetails = {
+    email: "parthimp950@gmail.com",
+    phone: "+91 7540099101",
+    location: "Madurai, Tamil Nadu, India",
+    availability: "Immediate Status — Open for Freelance Contracts"
   };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setSubmitStatus('');
-
-    try {
-      const response = await axios.post(`${API_BASE_URL}/contact`, formData, {
-        headers: {
-          'Content-Type': 'application/json',
-        }
-      });
-      
-      if (response.data.status === 'success') {
-        setSubmitStatus('success');
-        setFormData({ name: '', email: '', number: '', message: '' }); // Reset form
-      }
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      setSubmitStatus('error');
-    } finally {
-      setLoading(false);
-    }
-  };
-
   return (
-    <div className="contact-container" id="Contact">
-      <h1>Contact Me</h1>
-      
+    <section className="contact-section" id="Contact">
+      <div className="contact-container glass-card">
+        <div className="contact-header">
+          <h1>Let's Connect</h1>
+          <p className="contact-subtitle">Skip the form — reach me directly for partnerships, projects, or consulting consultations.</p>
+          <div className="title-underline"></div>
+        </div>
 
-      <form onSubmit={handleSubmit}>
-        <label>
-          Your Name:
-          <input 
-            type="text" 
-            name="name" 
-            placeholder="Your Name" 
-            value={formData.name}
-            onChange={handleChange}
-            required 
-          />
-        </label>
+        <div className="contact-hub-grid">
 
-        <label>
-          Your Email:
-          <input 
-            type="email" 
-            name="email" 
-            placeholder="Your Email" 
-            value={formData.email}
-            onChange={handleChange}
-            required 
-          />
-        </label>
+          {/* Main Direct Channels */}
+          <div className="contact-channels">
 
-        <label>
-          Phone:
-          <input 
-            type="text" 
-            name="number" 
-            placeholder="Phone" 
-            value={formData.number}
-            onChange={handleChange}
-            required 
-          />
-        </label>
+            {/* Email Channel */}
+            <a href={`mailto:${contactDetails.email}`} className="channel-card glass-card">
+              <div className="channel-icon email"><FaEnvelope /></div>
+              <div className="channel-body">
+                <h3>Send an Email</h3>
+                <p className="channel-value">{contactDetails.email}</p>
+                <span className="channel-action">Click to write message &gt;</span>
+              </div>
+            </a>
 
-        <label>
-          Your Message:
-          <textarea 
-            name="message" 
-            placeholder="Your Message" 
-            value={formData.message}
-            onChange={handleChange}
-            required
-            rows="5"
-          ></textarea>
-        </label>
+            {/* Phone/WhatsApp Channel */}
+            <a href={`tel:${contactDetails.phone.replace(/\s+/g, '')}`} className="channel-card glass-card">
+              <div className="channel-icon phone"><FaPhoneAlt /></div>
+              <div className="channel-body">
+                <h3>Call / WhatsApp</h3>
+                <p className="channel-value">{contactDetails.phone}</p>
+                <span className="channel-action">Click to call or message &gt;</span>
+              </div>
+            </a>
 
-        <button type="submit" disabled={loading}>
-          {loading ? 'Sending...' : 'Send Message'}
-        </button>
-        <p>{submitStatus === 'success' ? 'Message sent successfully!' : submitStatus === 'error' ? 'Error sending message.' : ''}</p>
-      </form>
-      
-      <div className="SI">
-        <a href="https://www.linkedin.com/in/partheepan-murugan-accd4110" target="_blank" rel="noopener noreferrer">
-          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" />
-        </a>
-        <a href="https://github.com/parthi952" target="_blank" rel="noopener noreferrer">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="GitHub" />
-        </a>
-        <a href="https://twitter.com/Parthi40099" target="_blank" rel="noopener noreferrer">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733609.png" alt="Twitter" />
-        </a>
-        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" />
-        </a>
+            {/* Custom WhatsApp Chat link */}
+            <a href="https://wa.me/7540099101" target="_blank" rel="noopener noreferrer" className="channel-card glass-card">
+              <div className="channel-icon chat"><FaComments /></div>
+              <div className="channel-body">
+                <h3>Instant Chat</h3>
+                <p className="channel-value">Ping me directly on WhatsApp</p>
+                <span className="channel-action">Launch chat session &gt;</span>
+              </div>
+            </a>
+          </div>
+
+          {/* Freelancer Availability & Networks Panel */}
+          <div className="contact-meta-panel glass-card">
+            <h2>Contracting Status</h2>
+
+            <div className="meta-list">
+              <div className="meta-item">
+                <FaCheckDouble className="meta-icon success" />
+                <div>
+                  <h4>Current Availability</h4>
+                  <p>{contactDetails.availability}</p>
+                </div>
+              </div>
+
+              <div className="meta-item">
+                <FaMapMarkerAlt className="meta-icon location" />
+                <div>
+                  <h4>Base Location</h4>
+                  <p>{contactDetails.location}</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="networks-box">
+              <h3>Professional Networks</h3>
+              <div className="social-links-footer">
+                <a href="https://www.linkedin.com/in/partheepan-murugan-accd4110" target="_blank" rel="noopener noreferrer" className="social-icon-btn" aria-label="LinkedIn">
+                  <FaLinkedinIn />
+                </a>
+                <a href="https://github.com/parthi952" target="_blank" rel="noopener noreferrer" className="social-icon-btn" aria-label="GitHub">
+                  <FaGithub />
+                </a>
+                <a href="https://twitter.com/Parthi40099" target="_blank" rel="noopener noreferrer" className="social-icon-btn" aria-label="Twitter">
+                  <FaTwitter />
+                </a>
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon-btn" aria-label="Facebook">
+                  <FaFacebookF />
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 

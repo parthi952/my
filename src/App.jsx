@@ -6,20 +6,22 @@ import Service from "./components/service"
 import Contact from "../src/components/contacts"
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
+import CanvasBackground from "./components/CanvasBackground"
+
 function Portfolio() {
   return (
-    <div>
+    <div className="portfolio-app">
+      <CanvasBackground />
       <Navbar />
-      <div>
+      <main className="content-container">
         <Home />
         <About />
         <Projects />
         <Service />
         <Contact />
-      </div>
+      </main>
       <Footer />
     </div>
-    
   );
 }
 
